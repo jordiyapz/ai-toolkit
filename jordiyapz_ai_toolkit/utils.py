@@ -1,4 +1,6 @@
 import pandas as pd
+import time
+
 
 def one_hot_encode(df, columns=[], inplace=False):
     if type(columns) != list:
@@ -13,6 +15,7 @@ def one_hot_encode(df, columns=[], inplace=False):
             new_df.drop(feat, axis=1, inplace=True)
 
     return new_df
+
 
 def timeit(f):
     def timed(*args, **kw):
