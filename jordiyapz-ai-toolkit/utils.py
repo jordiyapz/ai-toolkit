@@ -1,3 +1,5 @@
+import pandas as pd
+
 def one_hot_encode(df, columns=[], inplace=False):
     if type(columns) != list:
         columns = [columns]
