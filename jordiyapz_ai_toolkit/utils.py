@@ -26,3 +26,17 @@ def timeit(f):
         return result
 
     return timed
+
+
+def replace_values(df, columns, value_pairs, inplace=False):
+    if type(columns) is not list:
+        columns = [columns]
+
+    if not inplace:
+        df = pd.DataFrame(df.loc[:])
+
+    for col in columns:
+        for key, val in value_pairs:
+            df.loc[df[col] == key, col] = val
+    if not inplace:
+        return df
