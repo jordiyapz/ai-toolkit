@@ -1,3 +1,6 @@
+from jordiyapz_ai_toolkit.utils import timeit
+
+
 class Pipeline:
     def __init__(self, origin=None, pipes=[]):
         self._origin = origin
@@ -9,7 +12,8 @@ class Pipeline:
     def __repr__(self):
         pipes = '' if not self._pipeline else ',\n    pipes=(\n        {})'.format(
             ',\n        '.join(('{}({})'.format(fn.__name__,
-                                                ', '.join(args) if args else '',
+                                                ', '.join(
+                                                    args) if args else '',
                                                 'skipable=True' if skipable else '')
                                for fn, args, skipable in self._pipeline)))
         return 'Pipeline({}{})'.format(type(self._origin), pipes)
@@ -88,7 +92,7 @@ class Pipeline:
     def peek(self, stop=None, cache=False, skip=False,
              skip_index=[], verbose=2):
         if stop and stop >= len(self._pipeline):
-            raise IndexError('Index must be in range 0 to {}'\
+            raise IndexError('Index must be in range 0 to {}'
                              .format(len(self._pipeline)-1))
 
         current = self.compile(cache, stop, skip, skip_index, verbose)

@@ -13,3 +13,13 @@ def one_hot_encode(df, columns=[], inplace=False):
             new_df.drop(feat, axis=1, inplace=True)
 
     return new_df
+
+def timeit(f):
+    def timed(*args, **kw):
+        ts = time.time()
+        result = f(*args, **kw)
+        te = time.time()
+        print('took %2.4f sec' % (te-ts))
+        return result
+
+    return timed
