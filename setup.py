@@ -8,5 +8,5 @@ setup(
     author_email='jordiyaputra@gmail.com',
     description='Toolkit yang terkumpul dari tubes AI pertama (Genetic Algorithm) hingga tubes pertama ML (Unsupervised Learning).',
     packages=find_packages(),
-    install_requires=['pandas >= 1.1.0'],
+    install_requires=['pandas >= 1.1.0', 'tqdm'],
 )

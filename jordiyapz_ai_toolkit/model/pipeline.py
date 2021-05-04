@@ -1,4 +1,4 @@
-from jordiyapz_ai_toolkit.utils import timeit
+from jordiyapz_ai_toolkit.util import timeit
 
 
 class Pipeline:
